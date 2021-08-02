@@ -26,15 +26,15 @@
     <script defer src="/__/firebase/8.3.1/firebase-auth.js"></script>
     <script defer src="/__/firebase/8.3.1/firebase-database.js"></script>
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-    <script src="js/signIn.js"></script>
+    <!-- <script src="js/signIn.js"></script> -->
+    <script defer src="https://unpkg.com/tone"></script>
+    <script defer src="js/app.js" type="module"></script>
   </head>
   <body>
     <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <div class="navbar-item">
-<h1 class="has-text-white">
-         <strong> My Music Jam </strong> 
-        </h1>
+              <strong class="has-text-white"> My Music Jam </strong> 
           </div>
       
           <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -43,16 +43,6 @@
             <span aria-hidden="true"></span>
           </a>
         </div>
-      
-        <!-- <div id="navbarBasicExample" class="navbar-menu">
-          <div class="navbar-start">
-            <a class="navbar-item" id = "guide">
-              Guide
-            </a>
-      
-            <a class="navbar-item" id= "Join Jam">
-              Documentation
-            </a> -->
       
           <div class="navbar-end">
                 <a class="navbar-item">
@@ -67,7 +57,57 @@
           </div>
         </div>
       </nav>
-   
+<div class = "section">
+    <div class="modal" id = "viewLoops">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">View Loops</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <!-- Content ... -->
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-success">Save</button>
+          <button class="button">Cancel</button>
+        </footer>
+      </div>
+    </div>
+
     
+    <div class="modal" id = "changeInst">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Change Instrument</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <!-- Content ... -->
+        </section>
+        <footer class="modal-card-foot">
+          <button class="button is-success">Save</button>
+          <button class="button">Cancel</button>
+        </footer>
+      </div>
+    </div>
+  </div>
+  
+  <button id="startaudio">Start Audio</button>
+  <div class = "section">
+    <!-- keyboard goes here -->
+    <div class="columns has-background-light">
+      <div class="column is-one">W</div>
+      <div class="column is-one">E</div>
+      <div class="column is-one">T</div>
+      <div class="column is-one">Y</div>
+      <div class="column is-one">U</div>
+      <div class="column is-one">O</div>
+      <div class="column is-one">P</div>
+    </div>
+    
+
+  </div>
   </body>
 </html>
