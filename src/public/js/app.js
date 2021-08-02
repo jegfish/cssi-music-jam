@@ -16,6 +16,12 @@ let googleUser;
 //   });
 // };
 
+function playKey(keycode) {
+  const virtkey = document.querySelector(`#${keycode}`);
+  const synth = new Tone.Synth().toDestination();
+  synth.triggerAttackRelease("C4", "8n");
+}
+
 const btn = document.querySelector("#startaudio");
 btn.addEventListener("click", (e) => {
   console.log("hello");
