@@ -1,0 +1,7 @@
+/* polka dot background black & white */
+body {
+    background-image: radial-gradient(#212121 10%, transparent 10%);
+    background-color: white;
+    background-position: 0 0, 10px 10px;
+    background-size: 10px 10px;
+}
