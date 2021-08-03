@@ -3,6 +3,17 @@
 
 let googleUser;
 
+const logOut = document.querySelector("logOutBtn");
+
+logOut.addEventListener("click", (e) => {
+  firebase.auth().signOut().then(() => {
+    window.location = 'signIn.html';
+  }).catch((error) => {
+    // An error happened.
+  });
+});
+
+
 // window.onload = (event) => {
 //   // Use this to retain user state between html pages.
 //   firebase.auth().onAuthStateChanged(function(user) {
@@ -79,16 +90,16 @@ function unhighlightKey(elem) {
   elem.classList.remove("mybox");
 }
 
-function loopKeyO(elem) {
+// function loopKeyO(elem) {
 
-}
+// }
 
-const btn = document.querySelector("#startaudio");
-btn.addEventListener("click", (e) => {
-  console.log("hello");
-  const synth = new Tone.Synth().toDestination();
-  synth.triggerAttackRelease("C4", "8n");
-});
+// const btn = document.querySelector("#startaudio");
+// btn.addEventListener("click", (e) => {
+//   console.log("hello");
+//   const synth = new Tone.Synth().toDestination();
+//   synth.triggerAttackRelease("C4", "8n");
+// });
 
 // const synth = new Tone.Synth().toDestination();
 document.addEventListener("keydown", (e) => {
