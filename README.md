@@ -52,10 +52,22 @@
   - ? changeable instrument
   - ? effects
     - ? UI: toggleable effects, checkbox
-    - vibrato
+    - vibrato (slider?)
+    - pitch slider?
   - bottom row uses drum synth
 - ? visualization of music
 - ? metronome
+
+## Mentor day 2
+- make it obvious what the notes are on screen
+  - drums for last row
+  - white and black keys?
+  - could add small label of what note a key plays
+  - add space between drum row and other rows to make it clear it's different synth/instrument
+- try to get recording and playback before looping the recording
+- have most features presentable for mentor meeting on Wednesday "last call for changes"
+- rigorously test Thursday so works for Friday
+  - though we're probably doing a recorded demo
 
 ## Questions for mentor
 - UI design?

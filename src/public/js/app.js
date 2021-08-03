@@ -3,15 +3,15 @@
 
 let googleUser;
 
-const logOut = document.querySelector("logOutBtn");
+// const logOut = document.querySelector("logOutBtn");
 
-logOut.addEventListener("click", (e) => {
-  firebase.auth().signOut().then(() => {
-    window.location = 'signIn.html';
-  }).catch((error) => {
-    // An error happened.
-  });
-});
+// logOut.addEventListener("click", (e) => {
+//   firebase.auth().signOut().then(() => {
+//     window.location = 'signIn.html';
+//   }).catch((error) => {
+//     // An error happened.
+//   });
+// });
 
 
 // window.onload = (event) => {
