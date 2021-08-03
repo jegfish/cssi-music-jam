@@ -5,3 +5,17 @@ body {
     background-position: 0 0, 10px 10px;
     background-size: 10px 10px;
 }
+.button{
+    background-color: white;
+}
+
+.column.button {
+    padding: 5px;
+    margin: 5px;
+}
+
+.mybox {
+    /* border-width: 5px;
+    border-color: rgba(201, 76, 76, 0.3); */
+    box-shadow: 0px 0px 8px 4px red;
+}

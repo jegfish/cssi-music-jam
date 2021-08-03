@@ -18,8 +18,18 @@ let googleUser;
 
 function playKey(keycode) {
   const virtkey = document.querySelector(`#${keycode}`);
+  highlightKey(virtkey);
   const synth = new Tone.Synth().toDestination();
   synth.triggerAttackRelease("C4", "8n");
+}
+
+function highlightKey(elem) {
+  elem.classList.add("mybox");
+  // console.log(elem);
+}
+
+function unhighlightKey(elem) {
+  elem.classList.remove("mybox");
 }
 
 const btn = document.querySelector("#startaudio");
@@ -38,8 +48,11 @@ document.addEventListener("keydown", (e) => {
   } else if (e.code === "KeyK") {
     synth.triggerAttackRelease("D4", "8n");
   }
+  playKey(e.code);
 });
 
 document.addEventListener("keyup", (e) => {
   console.log("keyup:", e.code);
+  const virtkey = document.querySelector(`#${e.code}`);
+  unhighlightKey(virtkey);
 });

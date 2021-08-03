@@ -57,8 +57,20 @@
           </div>
         </div>
       </nav>
-<div class = "section">
-    <div class="modal" id = "viewLoops">
+  
+  <div id = "selection" style="justify-content:center;">
+  
+    <button type="button" class="button" data-toggle="modal" data-target="#exampleModal">
+  
+    View Loops
+
+    </button>
+  
+  <button type="button" class="button" data-toggle="modal" data-target="#exampleModal">
+  Change Instrument
+</button>
+    
+    <div class="modal" id = "viewLoopsModal">
       <div class="modal-background"></div>
       <div class="modal-card">
         <header class="modal-card-head">
@@ -76,7 +88,7 @@
     </div>
 
     
-    <div class="modal" id = "changeInst">
+    <div class="modal" id = "changeInstModal">
       <div class="modal-background"></div>
       <div class="modal-card">
         <header class="modal-card-head">
@@ -93,33 +105,71 @@
       </div>
     </div>
   </div>
+
+    
   
   <button id="startaudio">Start Audio</button>
-  <div class = "section">
+  <div class = "section" id = "keyBoard" style = "justify-content:center; margin-top: 90px;">
     <!-- keyboard goes here -->
+       <div class="columns is-centered" id = Loops>
+      <div id="Digit1" class="button column">1</div>
+      <div id="Digit2" class="button column">2</div>
+      <div id="Digit3" class="button column">3</div>
+      <div id="Digit4" class="button column">4</div>
+      <div id="Digit5" class="button column">5</div>
+      <div id="Digit6" class="button column">6</div>
+      <div id="Digit7" class="button column">7</div>
+      <div id="Digit8" class="button column">8</div>
+      <div id="Digit9" class="button column">9</div>
+      <div id="Digit0" class="button column">0</div>
+    </div>
+    
     <div class="columns" id = blackKeys>
-      <div id="KeyW" class="column is-one ">W</div>
-      <div class="column is-one has-text-centered">E</div>
-      <div class="column is-one has-text-centered">T</div>
-      <div class="column is-one has-text-centered">Y</div>
-      <div class="column is-one is-one has-background-li has-text-centered">U</div>
-      <div class="column is-one is-one has-background-light has-text-centered">O</div>
-      <div class="column is-one is-one has-background-light has-text-centered">P</div>
+      <div id="KeyQ" class="column button">Q</div>
+      <div id="KeyW" class="column button">W</div>
+      <div id="KeyE" class="column button">E</div>
+      <div id="KeyR" class="column button">R</div>
+      <div id="KeyT" class="column button">T</div>
+      <div id="KeyY" class="column button">Y</div>
+      <div id="KeyU" class="column button">U</div>
+      <div id="KeyI" class="column button">I</div>
+      <div id="KeyO" class="column button">O</div>
+      <div id="KeyP" class="column button">P</div>
     </div>
 
     <div class="columns" id = "whiteKeys">
-      <div id="KeyA" class="column is-one">A</div>
-      <div class="column is-one has-background-light has-text-centered">S</div>
-      <div class="column is-one is-one has-background-light has-text-centered">D</div>
-      <div class="column is-one is-one has-background-light has-text-centered">F</div>
-      <div class="column is-one is-one has-background-light has-text-centered">G</div>
-      <div class="column is-one is-one has-background-light has-text-centered">H</div>
-      <div class="column is-one is-one has-background-light has-text-centered">J</div>
-      <div class="column is-one is-one has-background-light has-text-centered">K</div>
-      <div class="column is-one is-one has-background-light has-text-centered">L</div>
+      <div id="KeyA" class="column button">A</div>
+      <div id="KeyS" class="column button">S</div>
+      <div id="KeyD" class="column button">D</div>
+      <div id="KeyF" class="column button">F</div>
+      <div id="KeyG" class="column button">G</div>
+      <div id="KeyH" class="column button">H</div>
+      <div id="KeyJ" class="column button">J</div>
+      <div id="KeyK" class="column button">K</div>
+      <div id="KeyL" class="column button">L</div>
     </div>
     
+    <div class="columns" id = "drumPads">
+      <div id="KeyZ" class="column button">Z</div>
+      <div id="KeyX" class="column button">X</div>
+      <div id="KeyC" class="column button">C</div>
+      <div id="KeyV" class="column button">V</div>
+      <div id="KeyB" class="column button">B</div>
+      <div id="KeyN" class="column button">N</div>
+      <div id="KeyM" class="column button">M</div>
+    </div>
 
   </div>
+  
+<!--   <footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Music Jam</strong> by <p></p>. The source code is licensed
+      <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+      is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+    </p>
+  </div>
+</footer> -->
+                                                  
   </body>
 </html>
