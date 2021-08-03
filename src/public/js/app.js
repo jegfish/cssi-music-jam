@@ -25,7 +25,7 @@ let googleUser;
 const soundMap = {
   "KeyW": {note: "C#4", on: false}, "KeyE": {note: "D#4", on: false}, "KeyT": {note: "E#4", on: false}, "KeyY": {note: "F#4", on: false}, "KeyU": {note: "G#4", on: false}, "KeyO": {note: "D#5", on: false}, "KeyP": {note: "C#5", on: false},
   "KeyA": {note: "C4", on: false}, "KeyS": {note: "D4", on: false}, "KeyD": {note: "E4", on: false}, "KeyF": {note: "F4", on: false}, "KeyG": {note: "G4", on: false}, "KeyH": {note: "A4", on: false}, "KeyJ": {note: "B4", on: false}, "KeyK": {note: "C5", on: false}, "KeyL": {note: "D4", on: false},
-  "KeyZ": "", "KeyX": "", "KeyC": "", "KeyV": "", "KeyB": "", "KeyN": "", "KeyM": "",
+  "KeyZ": {note: "C2", on: false}, "KeyX": {note: "D2", on: false}, "KeyC": {note: "E2", on: false}, "KeyV": {note: "F2", on: false}, "KeyB": {note: "G2", on: false}, "KeyN": {note: "A2", on: false}, "KeyM": {note: "B2", on: false},
 };
 
 
@@ -36,7 +36,7 @@ const soundMap = {
 // };
 
 const synth = new Tone.PolySynth(Tone.Synth).toDestination();
-const drum = new Tone.PluckSynth(Tone.Synth).toDestination();
+const drum = new Tone.PluckSynth().toDestination();
 
 const now = Tone.now();
 
@@ -51,7 +51,7 @@ function playKey(keycode) {
   // if (synth.activeVoices >= synth.maxPolyphony) {
   //   synth.releaseAll(now);
   // }
-  if (soundMap[keycode].on) {
+  if (soundMap[keycode] === undefined || soundMap[keycode].on) {
     return;
   }
   synth.triggerAttack(soundMap[keycode].note);
@@ -60,10 +60,14 @@ function playKey(keycode) {
 
 function stopKey(keycode) {
   const virtkey = document.querySelector(`#${keycode}`);
-  // const now = Tone.now();
-  // synth.triggerRelease(soundMap[keycode], "+0");
-  synth.releaseAll("+0");
   unhighlightKey(virtkey);
+  // const now = Tone.now();
+  if (soundMap[keycode] === undefined) {
+    return;
+  }
+  synth.triggerRelease(soundMap[keycode].note, "+0");
+  soundMap[keycode].on = false;
+  // synth.releaseAll("+0");
 }
 
 function highlightKey(elem) {
@@ -73,6 +77,10 @@ function highlightKey(elem) {
 
 function unhighlightKey(elem) {
   elem.classList.remove("mybox");
+}
+
+function loopKeyO(elem) {
+
 }
 
 const btn = document.querySelector("#startaudio");
