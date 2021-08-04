@@ -29,21 +29,23 @@
     <!-- <script src="js/signIn.js"></script> -->
     <script defer src="https://unpkg.com/tone"></script>
     <script defer src="js/app.js" type="module"></script>
+    <script src="js/theme.js"></script>
   </head>
   <body>
+
     <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <div class="navbar-item">
-              <strong class="has-text-white"> My Music Jam </strong> 
+              <strong class="has-text-white"> My Music Jam </strong>
           </div>
-      
+
           <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
           </a>
         </div>
-      
+
           <div class="navbar-end">
                 <a class="navbar-item">
                   <strong>Guide</strong>
@@ -55,21 +57,20 @@
                   <strong> Log out </strong>
                  </a>
           </div>
-        </div>
       </nav>
-  
+<div class="container">
   <div id = "selection" style="justify-content:center;">
-  
+
     <button type="button" class="button" data-toggle="modal" data-target="#exampleModal">
-  
+
     View Loops
 
     </button>
-  
+
   <button type="button" class="button" data-toggle="modal" data-target="#exampleModal">
   Change Instrument
 </button>
-    
+
     <div class="modal" id = "viewLoopsModal">
       <div class="modal-background"></div>
       <div class="modal-card">
@@ -87,7 +88,7 @@
       </div>
     </div>
 
-    
+
     <div class="modal" id = "changeInstModal">
       <div class="modal-background"></div>
       <div class="modal-card">
@@ -98,6 +99,7 @@
         <section class="modal-card-body">
           <!-- Content ... -->
         </section>
+
         <footer class="modal-card-foot">
           <button class="button is-success">Save</button>
           <button class="button">Cancel</button>
@@ -106,8 +108,10 @@
     </div>
   </div>
 
-    
-  
+
+
+
+
   <!-- <button id="startaudio">Start Audio</button> -->
   <div class = "section" id = "keyBoard" style = "justify-content:center; margin-top: 90px;">
     <!-- keyboard goes here -->
@@ -123,7 +127,7 @@
       <div id="Digit9" class="button column">9</div>
       <div id="Digit0" class="button column">0</div>
     </div>
-    
+
     <div class="columns" id = blackKeys>
       <div id="KeyQ" class="column button">Q</div>
       <div id="KeyW" class="column button">W</div>
@@ -148,7 +152,7 @@
       <div id="KeyK" class="column button">K</div>
       <div id="KeyL" class="column button">L</div>
     </div>
-    
+
     <div class="columns" id = "drumPads">
       <div id="KeyZ" class="column button">Z</div>
       <div id="KeyX" class="column button">X</div>
@@ -160,7 +164,7 @@
     </div>
 
   </div>
-  
+</div>
 <!--   <footer class="footer">
   <div class="content has-text-centered">
     <p>
@@ -170,6 +174,9 @@
     </p>
   </div>
 </footer> -->
-                                                  
+<label id="switch" class="switch">
+<input type="checkbox" onchange="toggleTheme()" id="slider">
+<span class="slider round"></span>
+</label>
   </body>
 </html>
