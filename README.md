@@ -69,17 +69,31 @@
 - rigorously test Thursday so works for Friday
   - though we're probably doing a recorded demo
 
+## Thursday
+- make it obvious what the notes are on screen
+  - [X] drums for last row
+  - [X] white and black keys?
+  - [X] could add small label of what note a key plays
+  - [X] add space between drum row and other rows to make it clear it's different synth/instrument
+- [X] separate drum synth
+- make it pretty
+
+### Main Extra
+- additional instruments
+  - specific instruments hardcoded
+  - toggle / slide different effects to synth
+
 ## Questions for mentor
 - UI design?
 - Thoughts on theme?
 - Tips on splitting up work
 
-## 
-- Touch screen supports
-
-## Maybe
-- CSS Variables
-  - Changeable theme
+## Presentation (cool stuff, what did we learn)
+- rest/spread operators / our debug function wrapper around console.log (show snippet in slides)
+- regex
+  - regex replace editor support (Vim/sed)
+    - [ ] Vim editor replace demo video ?
+  - regex to match strings (show code snippet in slides)
 
 ## Don't lose
 - https://www.clairecodes.com/blog/2018-10-10-css-polka-dot-background/

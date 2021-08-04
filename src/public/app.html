@@ -27,10 +27,12 @@
     <script defer src="/__/firebase/8.3.1/firebase-database.js"></script>
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
     <!-- <script src="js/signIn.js"></script> -->
-    <script defer src="https://unpkg.com/tone"></script>
+    <!-- <script defer src="https://unpkg.com/tone"></script>-->
+    <script defer src="https://unpkg.com/tone@14.7.77/build/Tone.js"></script>
     <script defer src="js/app.js" type="module"></script>
   </head>
   <body>
+    <div>
     <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <div class="navbar-item">
@@ -57,61 +59,64 @@
           </div>
         </div>
       </nav>
-  
-  <div id = "selection" style="justify-content:center;">
-  
-    <button type="button" class="button" data-toggle="modal" data-target="#exampleModal">
-  
-    View Loops
-
-    </button>
-  
-  <button type="button" class="button" data-toggle="modal" data-target="#exampleModal">
-  Change Instrument
-</button>
-    
-    <div class="modal" id = "viewLoopsModal">
-      <div class="modal-background"></div>
-      <div class="modal-card">
-        <header class="modal-card-head">
-          <p class="modal-card-title">View Loops</p>
-          <button class="delete" aria-label="close"></button>
-        </header>
-        <section class="modal-card-body">
-          <!-- Content ... -->
-        </section>
-        <footer class="modal-card-foot">
-          <button class="button is-success">Save</button>
-          <button class="button">Cancel</button>
-        </footer>
-      </div>
     </div>
-
+  
+  <!-- <div id = "section" class = "columns is-centered"> -->
+    <div id = "section" class = "columns is-centered">
+  
+    <div class="container is-max-desktop">
+      <button id="viewLoopsBtn" type="button" class="button">
+      View Loops
+      </button>
     
-    <div class="modal" id = "changeInstModal">
-      <div class="modal-background"></div>
-      <div class="modal-card">
-        <header class="modal-card-head">
-          <p class="modal-card-title">Change Instrument</p>
-          <button class="delete" aria-label="close"></button>
-        </header>
-        <section class="modal-card-body">
-          <!-- Content ... -->
-        </section>
-        <footer class="modal-card-foot">
-          <button class="button is-success">Save</button>
-          <button class="button">Cancel</button>
-        </footer>
-      </div>
+      <button type="button" class="button" id="changeInstrumentBtn">
+      Change Instrument
+      </button>
     </div>
   </div>
-
+        
+        <div class="modal" id = "viewLoopsModal">
+          <div class="modal-background"></div>
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">View Loops</p>
+            </header>
+            <section class="modal-card-body">
+              <!-- Content ... -->
+            </section>
+            <footer class="modal-card-foot">
+              <button class="button is-success">Save</button>
+              <button class="button" id ="closeLoopsBtn">Cancel</button>
+            </footer>
+          </div>
+        </div>
+    
+        
+        <div class="modal" id = "changeInstModal">
+          <div class="modal-background"></div>
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Change Instrument</p>
+            </header>
+            <section class="modal-card-body">
+              <!-- Content ... -->
+            </section>
+            <footer class="modal-card-foot">
+              <button class="button is-success">Save</button>
+              <button class="button" id = "closeInstBtn">Cancel</button>
+            </footer>
+          </div>
+        </div>
+      </div>
+    
+        
     
   
   <!-- <button id="startaudio">Start Audio</button> -->
   <div class = "section" id = "keyBoard" style = "justify-content:center; margin-top: 90px;">
     <!-- keyboard goes here -->
-       <div class="columns is-centered" id = Loops>
+    <!--<div class="columns is-centered" id ="Loops">
+      <span class="column is-1"></span>
       <div id="Digit1" class="button column">1</div>
       <div id="Digit2" class="button column">2</div>
       <div id="Digit3" class="button column">3</div>
@@ -122,22 +127,26 @@
       <div id="Digit8" class="button column">8</div>
       <div id="Digit9" class="button column">9</div>
       <div id="Digit0" class="button column">0</div>
-    </div>
+      <span class="column is-1"></span>
+    </div>-->
     
     <div class="columns" id = blackKeys>
-      <div id="KeyQ" class="column button">Q</div>
-      <div id="KeyW" class="column button">W</div>
-      <div id="KeyE" class="column button">E</div>
-      <div id="KeyR" class="column button">R</div>
-      <div id="KeyT" class="column button">T</div>
-      <div id="KeyY" class="column button">Y</div>
-      <div id="KeyU" class="column button">U</div>
-      <div id="KeyI" class="column button">I</div>
-      <div id="KeyO" class="column button">O</div>
-      <div id="KeyP" class="column button">P</div>
+      <span class="column is-1"></span>
+      <div id="KeyQ" disabled class="column button">Q</div>
+      <div id="KeyW" class="is-dark column button">W <span class="small">C#4</span></div>
+      <div id="KeyE" class="is-dark column button">E</div>
+      <div id="KeyR" disabled class="column button">R</div>
+      <div id="KeyT" class="is-dark column button">T</div>
+      <div id="KeyY" class="is-dark column button">Y</div>
+      <div id="KeyU" class="is-dark column button">U</div>
+      <div id="KeyI" disabled class="column button">I</div>
+      <div id="KeyO" class="is-dark column button">O</div>
+      <div id="KeyP" class="is-dark column button">P</div>
+      <span class="column is-1"></span>
     </div>
 
     <div class="columns" id = "whiteKeys">
+      <span class="column is-1"></span>
       <div id="KeyA" class="column button">A</div>
       <div id="KeyS" class="column button">S</div>
       <div id="KeyD" class="column button">D</div>
@@ -147,9 +156,11 @@
       <div id="KeyJ" class="column button">J</div>
       <div id="KeyK" class="column button">K</div>
       <div id="KeyL" class="column button">L</div>
+      <span class="column is-1"></span>
     </div>
     
     <div class="columns" id = "drumPads">
+      <span class="column is-1">Drums:</span>
       <div id="KeyZ" class="column button">Z</div>
       <div id="KeyX" class="column button">X</div>
       <div id="KeyC" class="column button">C</div>
@@ -157,6 +168,7 @@
       <div id="KeyB" class="column button">B</div>
       <div id="KeyN" class="column button">N</div>
       <div id="KeyM" class="column button">M</div>
+      <span class="column is-1"></span>
     </div>
 
   </div>

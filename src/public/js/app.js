@@ -1,6 +1,14 @@
 // import * as Tone from '/node_modules/tone/build/Tone.js';
 // import * as Tone from 'tone';
 
+let DEBUG = true;
+
+function debug(...args) {
+  if (DEBUG) {
+    console.log(...args);
+  }
+}
+
 let googleUser;
 
 // const logOut = document.querySelector("logOutBtn");
@@ -12,6 +20,40 @@ let googleUser;
 //     // An error happened.
 //   });
 // });
+const viewLoopsBtn = document.querySelector("#viewLoopsBtn");
+const changeInstrumentBtn = document.querySelector("#changeInstrumentBtn")
+const changeInstModal = document.querySelector("#changeInstModal");
+const viewLoopsModal = document.querySelector("#viewLoopsModal");
+const closeLoops = document.querySelector("#closeLoopsBtn");
+const closeInst = document.querySelector("#closeInstBtn");
+
+viewLoopsBtn.addEventListener("click", (e) => {
+  viewLoopsModal.classList.add("is-active");
+});
+
+changeInstrumentBtn.addEventListener("click", (e) => {
+  changeInstModal.classList.add("is-active");
+});
+
+const closeInstModal = () =>{
+  changeInstModal.classList.remove('is-active');
+  }
+  
+  const closeLoopsModal = () =>{
+    viewLoopsModal.classList.remove('is-active');
+  }
+  
+
+closeLoops.addEventListener("click", (e) => {
+  console.log("clicked");
+  closeLoopsModal();
+});
+
+closeInst.addEventListener("click", (e) => {
+  console.log("clicked");
+  closeInstModal();
+});
+
 
 
 // window.onload = (event) => {
@@ -35,10 +77,23 @@ let googleUser;
 
 const soundMap = {
   "KeyW": {note: "C#4", on: false}, "KeyE": {note: "D#4", on: false}, "KeyT": {note: "E#4", on: false}, "KeyY": {note: "F#4", on: false}, "KeyU": {note: "G#4", on: false}, "KeyO": {note: "D#5", on: false}, "KeyP": {note: "C#5", on: false},
-  "KeyA": {note: "C4", on: false}, "KeyS": {note: "D4", on: false}, "KeyD": {note: "E4", on: false}, "KeyF": {note: "F4", on: false}, "KeyG": {note: "G4", on: false}, "KeyH": {note: "A4", on: false}, "KeyJ": {note: "B4", on: false}, "KeyK": {note: "C5", on: false}, "KeyL": {note: "D4", on: false},
+  "KeyA": {note: "C4", on: false}, "KeyS": {note: "D4", on: false}, "KeyD": {note: "E4", on: false}, "KeyF": {note: "F4", on: false}, "KeyG": {note: "G4", on: false}, "KeyH": {note: "A4", on: false}, "KeyJ": {note: "B4", on: false}, "KeyK": {note: "C5", on: false}, "KeyL": {note: "D5", on: false},
   "KeyZ": {note: "C2", on: false}, "KeyX": {note: "D2", on: false}, "KeyC": {note: "E2", on: false}, "KeyV": {note: "F2", on: false}, "KeyB": {note: "G2", on: false}, "KeyN": {note: "A2", on: false}, "KeyM": {note: "B2", on: false},
 };
 
+// Make virtual keyboard clickable/tappable
+const virtKeys = document.querySelectorAll(".column.button");
+for (let e of virtKeys) {
+  if (e.id.includes("Key") && soundMap[e.id] !== undefined) {
+    e.innerHTML += ` <span class="small">${soundMap[e.id].note}</span>`;
+  }
+  e.addEventListener("mousedown", () => {
+    playKey(e.id);
+  });
+  e.addEventListener("mouseup", () => {
+    stopKey(e.id);
+  });
+}
 
 // const soundMap = {
 //   "KeyW": "C#4", "KeyE": "D#4", "KeyT": "E#4", "KeyY": "F#4", "KeyU": "G#4", "KeyO": "D#5", "KeyP": "C#5",
@@ -46,12 +101,23 @@ const soundMap = {
 //   "KeyZ": "", "KeyX": "", "KeyC": "", "KeyV": "", "KeyB": "", "KeyN": "", "KeyM": "",
 // };
 
-const synth = new Tone.PolySynth(Tone.Synth).toDestination();
+function isDrum(keycode) {
+  return /^Key[ZXCVBNM]$/.test(keycode);
+}
+
+const mainSynth = new Tone.PolySynth(Tone.Synth).toDestination();
 const drum = new Tone.PluckSynth().toDestination();
 
 const now = Tone.now();
 
 function playKey(keycode) {
+  if (soundMap[keycode] === undefined || soundMap[keycode].on) {
+    return;
+  }
+  let synth = mainSynth;
+  if (isDrum(keycode)) {
+    synth = drum;
+  }
   const virtkey = document.querySelector(`#${keycode}`);
   highlightKey(virtkey);
   // const synth = new Tone.Synth().toDestination();
@@ -62,21 +128,20 @@ function playKey(keycode) {
   // if (synth.activeVoices >= synth.maxPolyphony) {
   //   synth.releaseAll(now);
   // }
-  if (soundMap[keycode] === undefined || soundMap[keycode].on) {
-    return;
-  }
   synth.triggerAttack(soundMap[keycode].note);
   soundMap[keycode].on = true;
 }
 
 function stopKey(keycode) {
-  const virtkey = document.querySelector(`#${keycode}`);
-  unhighlightKey(virtkey);
-  // const now = Tone.now();
   if (soundMap[keycode] === undefined) {
     return;
   }
-  synth.triggerRelease(soundMap[keycode].note, "+0");
+  const virtkey = document.querySelector(`#${keycode}`);
+  unhighlightKey(virtkey);
+  // const now = Tone.now();
+  if (!isDrum(keycode)) {
+    mainSynth.triggerRelease(soundMap[keycode].note, "+0");
+  }
   soundMap[keycode].on = false;
   // synth.releaseAll("+0");
 }
@@ -89,6 +154,21 @@ function highlightKey(elem) {
 function unhighlightKey(elem) {
   elem.classList.remove("mybox");
 }
+
+// function pitchUp() {
+// if(keycode == '40'){
+//   const upOctave = new Tone.PitchShift([pitch]);
+//   pitchShift.pitch = -12;
+// }
+
+// };
+
+// function pitchDown() {
+// if(keycode == '39'){
+
+// }
+
+// }
 
 // function loopKeyO(elem) {
 
@@ -103,11 +183,11 @@ function unhighlightKey(elem) {
 
 // const synth = new Tone.Synth().toDestination();
 document.addEventListener("keydown", (e) => {
-  // console.log("keydown:", e.code);
+  debug("keydown:", e.code);
   playKey(e.code);
 });
 
 document.addEventListener("keyup", (e) => {
-  // console.log("keyup:", e.code);
+  debug("keyup:", e.code);
   stopKey(e.code);
 });
