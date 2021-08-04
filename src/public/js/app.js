@@ -76,7 +76,7 @@ closeInst.addEventListener("click", (e) => {
 // };
 
 const soundMap = {
-  "KeyW": {note: "C#4", on: false}, "KeyE": {note: "D#4", on: false}, "KeyT": {note: "E#4", on: false}, "KeyY": {note: "F#4", on: false}, "KeyU": {note: "G#4", on: false}, "KeyO": {note: "D#5", on: false}, "KeyP": {note: "C#5", on: false},
+  "KeyW": {note: "C#4", on: false}, "KeyE": {note: "D#4", on: false}, "KeyT": {note: "F#4", on: false}, "KeyY": {note: "G#4", on: false}, "KeyU": {note: "A#4", on: false}, "KeyO": {note: "C#5", on: false}, "KeyP": {note: "D#5", on: false},
   "KeyA": {note: "C4", on: false}, "KeyS": {note: "D4", on: false}, "KeyD": {note: "E4", on: false}, "KeyF": {note: "F4", on: false}, "KeyG": {note: "G4", on: false}, "KeyH": {note: "A4", on: false}, "KeyJ": {note: "B4", on: false}, "KeyK": {note: "C5", on: false}, "KeyL": {note: "D5", on: false},
   "KeyZ": {note: "C2", on: false}, "KeyX": {note: "D2", on: false}, "KeyC": {note: "E2", on: false}, "KeyV": {note: "F2", on: false}, "KeyB": {note: "G2", on: false}, "KeyN": {note: "A2", on: false}, "KeyM": {note: "B2", on: false},
 };

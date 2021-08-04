@@ -83,17 +83,37 @@
   - specific instruments hardcoded
   - toggle / slide different effects to synth
 
+### Mentor
+- if can't get loops
+  - maybe record
+  - if not record, play samples?
+- hide unused buttons
+- taller buttons/keys
+- try to add touchstart and touchend events
+
 ## Questions for mentor
 - UI design?
 - Thoughts on theme?
 - Tips on splitting up work
 
+## Friday
+- [ ] improve theme/UI and use changeable theme
+- [ ] ? diff instruments or toggleable effects
+- [ ] Create presentation slideshow
+- [ ] Create demo video(s)
+
 ## Presentation (cool stuff, what did we learn)
+- keymapping
+  - "dynamically" load key names
+  - add many event listeners through javascript
+  - "Dont repeat yourself"
 - rest/spread operators / our debug function wrapper around console.log (show snippet in slides)
 - regex
   - regex replace editor support (Vim/sed)
     - [ ] Vim editor replace demo video ?
-  - regex to match strings (show code snippet in slides)
+    - or demo in VS Code (use $1, $2 for match groups)
+  - regex to match strings in isDrum func (show code snippet in slides)
+- Split up speaking/presenting parts among the three of us
 
 ## Don't lose
 - https://www.clairecodes.com/blog/2018-10-10-css-polka-dot-background/
