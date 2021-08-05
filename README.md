@@ -99,6 +99,7 @@
 ## Friday
 - [ ] improve theme/UI and use changeable theme
 - [ ] ? diff instruments or toggleable effects
+- [ ] ? play samples
 - [ ] Create presentation slideshow
 - [ ] Create demo video(s)
 
