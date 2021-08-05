@@ -30,7 +30,7 @@
     <!-- <script defer src="https://unpkg.com/tone"></script>-->
     <script defer src="https://unpkg.com/tone@14.7.77/build/Tone.js"></script>
     <script defer src="js/app.js" type="module"></script>
-    <script src="js/theme.js"></script>
+    <script defer src="js/theme.js"></script>
   </head>
   <body>
     <div>
@@ -48,32 +48,35 @@
         </div>
 
           <div class="navbar-end">
-                <a class="navbar-item">
-                  <strong>Guide</strong>
-                </a>
-                <a class="navbar-item">
-                 <strong> Join Jam </strong>
-                </a>
-                <a id = "logOutBtn" class="navbar-item">
-                  <strong> Log out </strong>
-                 </a>
+            <label id="switch" class="switch navbar-item">
+              <input type="checkbox" onchange="toggleTheme()" id="slider">
+              <span class="slider round"></span>
+            </label>
+            <!-- <a class="navbar-item">
+              <strong>Guide</strong>
+            </a> -->
+            <!-- <a class="navbar-item">
+              <strong> Join Jam </strong>
+            </a>
+            <a id = "logOutBtn" class="navbar-item">
+              <strong> Log out </strong>
+              </a> -->
           </div>
       </nav>
     </div>
   
-  <!-- <div id = "section" class = "columns is-centered"> -->
-    <div id = "section" class = "columns is-centered">
+    <div id = "section" class = "">
   
-    <div class="container is-max-desktop">
-      <button id="viewLoopsBtn" type="button" class="button">
+    <!-- <div class="columns is-centered" style = "padding-top: 20px;">
+      <button id="viewLoopsBtn" type="button" class="button options">
       View Loops
       </button>
     
-      <button type="button" class="button" id="changeInstrumentBtn">
+      <button type="button" class="button options" id="changeInstrumentBtn">
       Change Instrument
       </button>
+    </div> -->
     </div>
-  </div>
         
         <div class="modal" id = "viewLoopsModal">
           <div class="modal-background"></div>
@@ -108,9 +111,7 @@
           </div>
         </div>
       </div>
-    
-        
-    
+    </div>
   
   <!-- <button id="startaudio">Start Audio</button> -->
   <div class = "section" id = "keyBoard" style = "justify-content:center; margin-top: 90px;">
@@ -130,8 +131,8 @@
       <span class="column is-1"></span>
     </div>-->
     
-    <div class="columns" id = blackKeys>
-      <span class="column is-1">Synthesizer:</span>
+    <div class="columns" id="blackKeys">
+      <span class="row-label column is-1">Synthesizer:</span>
       <div id="KeyQ" disabled class="column button">Q</div>
       <div id="KeyW" class="is-dark column button">W</div>
       <div id="KeyE" class="is-dark column button">E</div>
@@ -160,7 +161,7 @@
     </div>
 
     <div class="columns" id = "drumPads">
-      <span class="column is-1">Drums:</span>
+      <span class="row-label column is-1">Drums:</span>
       <div id="KeyZ" class="is-light column button">Z</div>
       <div id="KeyX" class="is-light column button">X</div>
       <div id="KeyC" class="is-light column button">C</div>
@@ -173,18 +174,15 @@
 
   </div>
 </div>
-<!--   <footer class="footer">
+  <footer class="footer" style = "bottom:0;position:absolute;width:100%; height: 10px;">
   <div class="content has-text-centered">
     <p>
-      <strong>Music Jam</strong> by <p></p>. The source code is licensed
-      <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-      is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+      <strong>Music Jam</strong> by Antonio, Jeffrey, and Tiana (<a href="https://github.com/jegfish/cssi-music-jam">Source Code</a>)
+    </p>
+    <p>
+      Made with: <a href="https://bulma.io/">Bulma</a>, <a href="https://tonejs.github.io/">Tone.js</a>
     </p>
   </div>
-</footer> -->
-<label id="switch" class="switch">
-<input type="checkbox" onchange="toggleTheme()" id="slider">
-<span class="slider round"></span>
-</label>
-  </body>
+</footer>
+</body>
 </html>

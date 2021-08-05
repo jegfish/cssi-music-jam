@@ -20,39 +20,39 @@ let googleUser;
 //     // An error happened.
 //   });
 // });
-const viewLoopsBtn = document.querySelector("#viewLoopsBtn");
-const changeInstrumentBtn = document.querySelector("#changeInstrumentBtn")
-const changeInstModal = document.querySelector("#changeInstModal");
-const viewLoopsModal = document.querySelector("#viewLoopsModal");
-const closeLoops = document.querySelector("#closeLoopsBtn");
-const closeInst = document.querySelector("#closeInstBtn");
+// const viewLoopsBtn = document.querySelector("#viewLoopsBtn");
+// const changeInstrumentBtn = document.querySelector("#changeInstrumentBtn")
+// const changeInstModal = document.querySelector("#changeInstModal");
+// const viewLoopsModal = document.querySelector("#viewLoopsModal");
+// const closeLoops = document.querySelector("#closeLoopsBtn");
+// const closeInst = document.querySelector("#closeInstBtn");
 
-viewLoopsBtn.addEventListener("click", (e) => {
-  viewLoopsModal.classList.add("is-active");
-});
+// viewLoopsBtn.addEventListener("click", (e) => {
+//   viewLoopsModal.classList.add("is-active");
+// });
 
-changeInstrumentBtn.addEventListener("click", (e) => {
-  changeInstModal.classList.add("is-active");
-});
+// changeInstrumentBtn.addEventListener("click", (e) => {
+//   changeInstModal.classList.add("is-active");
+// });
 
-const closeInstModal = () =>{
-  changeInstModal.classList.remove('is-active');
-  }
+// const closeInstModal = () =>{
+//   changeInstModal.classList.remove('is-active');
+//   }
   
-  const closeLoopsModal = () =>{
-    viewLoopsModal.classList.remove('is-active');
-  }
+//   const closeLoopsModal = () =>{
+//     viewLoopsModal.classList.remove('is-active');
+//   }
   
 
-closeLoops.addEventListener("click", (e) => {
-  console.log("clicked");
-  closeLoopsModal();
-});
+// closeLoops.addEventListener("click", (e) => {
+//   console.log("clicked");
+//   closeLoopsModal();
+// });
 
-closeInst.addEventListener("click", (e) => {
-  console.log("clicked");
-  closeInstModal();
-});
+// closeInst.addEventListener("click", (e) => {
+//   console.log("clicked");
+//   closeInstModal();
+// });
 
 
 
@@ -181,7 +181,6 @@ function unhighlightKey(elem) {
 //   synth.triggerAttackRelease("C4", "8n");
 // });
 
-// const synth = new Tone.Synth().toDestination();
 document.addEventListener("keydown", (e) => {
   debug("keydown:", e.code);
   playKey(e.code);

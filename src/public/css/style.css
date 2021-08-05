@@ -11,6 +11,7 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
+  padding-bottom: 20px;
 }
 
 .button{
@@ -20,7 +21,6 @@ body {
 .column.button {
     padding: 5px;
     margin: 5px;
-
 }
 
 .mybox {
@@ -48,13 +48,45 @@ body {
   --color-secondary: #fbfbfe;
   --color-accent: #fd6f53;
   --font-color: #000000;
+
+  --background-color: white;
+  --row-label-font-color: black;
+  --option-button-background-color: white;
 }
+
 .theme-dark {
   --color-primary: #17ed90;
   --color-secondary: #2a2c2d;
   --color-accent: #12cdea;
   --font-color: #ffffff;
+
+  --background-color: #0a0a0a;
+  --row-label-font-color: white;
+  --option-button-background-color: black;
 }
+
+.button.options {
+    background-color: var(--option-button-background-color);
+    color: var(--font-color);
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+.footer {
+    background-color: var(--background-color);
+    color: var(--font-color);
+}
+
+footer strong {
+    color: var(--font-color);
+}
+
+.row-label {
+    color: var(--row-label-font-color);
+}
+
 .container {
   display: flex;
   width: 100%;
@@ -82,6 +114,7 @@ body {
   display: inline-block;
   width: 60px;
   height: 34px;
+  margin-right: 10px;
 }
 
 /* Hide default HTML checkbox */
@@ -95,7 +128,7 @@ body {
 .slider {
   position: absolute;
   cursor: pointer;
-  top: 0;
+  top: 20px;
   left: 0;
   right: 0;
   bottom: 0;
