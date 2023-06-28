@@ -1,5 +1,5 @@
 # Key-ano
-Authors: [Antonio](), [Tiana](), [Jeff]()
+Authors: Antonio, [Tiana](https://github.com/tiananc), [Jeff](https://jeffreyfisher.net)
 
 ## Installing / Running
 ```sh
