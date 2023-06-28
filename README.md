@@ -1,5 +1,7 @@
-# Key-ano
+# Keyano
 Authors: Antonio, [Tiana](https://github.com/tiananc), [Jeff](https://jeffreyfisher.net)
+
+A digital instrument you play with your computer's keyboard. Created for our final project for [Google CSSI](https://buildyourfuture.withgoogle.com/programs/computer-science-summer-institute).
 
 ## Installing / Running
 ```sh
