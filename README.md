@@ -5,7 +5,7 @@ A digital instrument you play with your computer's keyboard. Created for our fin
 
 ## Installing / Running
 ```sh
-$ git clone https://github.com/jegfish/cssi-music-jam
+$ git clone https://github.com/jegfish/keyano
 ```
 
 Then, open `bundled.html` in your browser.
